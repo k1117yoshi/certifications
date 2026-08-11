@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>資格一覧 | ヨシラボ</title>
+    <meta name="description" content="保有資格・学習中資格を一覧化した静的ページです。">
+
+    <!-- Bootstrap 5 -->
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --brand: #0f4c81;
+            --brand-dark: #14345c;
+            --page-bg: #f7f8fb;
+        }
+
+        body {
+            background: var(--page-bg);
+            color: #1f2937;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            right: -120px;
+            top: -120px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-brand {
+            color: var(--brand);
+        }
+
+        .bg-brand-subtle {
+            background-color: #e8f1fb;
+        }
+
+        .badge-soft-blue {
+            background-color: #eff6ff;
+            color: #2563eb;
+        }
+
+        .badge-soft-green {
+            background-color: #ecfdf5;
+            color: #15803d;
+        }
+
+        .badge-soft-gold {
+            background-color: #fff7ed;
+            color: #b7791f;
+        }
+
+        .badge-soft-red {
+            background-color: #fff1f2;
+            color: #be123c;
+        }
+
+        .cert-card {
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 .75rem 1.5rem rgba(15, 23, 42, .08) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container py-4 py-md-5">
+        <section class="hero text-white rounded-5 shadow-sm p-4 p-md-5 mb-4 mb-md-5">
+            <div class="hero-content col-lg-8">
+                <p class="text-uppercase small fw-semibold opacity-75 mb-2 tracking-wide">ヨシラボ / Certifications</p>
+                <h1 class="display-4 fw-bold mb-3">資格一覧</h1>
+                <p class="lead mb-0 text-white-50">IT、クラウド、データベース、ビジネス領域を中心に、保有資格を整理しています。</p>
+            </div>
+        </section>
+
+        <section class="row g-3 g-md-4 mb-5" aria-label="資格サマリー">
+            <div class="col-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="display-6 fw-bold text-brand lh-1">20</div>
+                        <div class="text-secondary small mt-2">保有資格</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="display-6 fw-bold text-brand lh-1">5</div>
+                        <div class="text-secondary small mt-2">IT・クラウド系</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="display-6 fw-bold text-brand lh-1">3</div>
+                        <div class="text-secondary small mt-2">ビジネス・会計</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="display-6 fw-bold text-brand lh-1">3</div>
+                        <div class="text-secondary small mt-2">鉄道・旅行</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="display-6 fw-bold text-brand lh-1">5</div>
+                        <div class="text-secondary small mt-2">運転免許</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-body p-4">
+                        <div class="display-6 fw-bold text-brand lh-1">4</div>
+                        <div class="text-secondary small mt-2">その他</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="d-md-flex align-items-end justify-content-between mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">IT・クラウド・データベース</h2>
+                    <p class="text-secondary small mb-0">技術基盤、クラウド、データ領域の専門性</p>
+                </div>
+            </div>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-blue">Database</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家試験</span>
+                                </div>
+                                <span class="small text-secondary">経済産業省</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">データベーススペシャリスト</h3>
+                            <p class="text-secondary small mb-0">データベース設計、SQL、性能、可用性、データ管理に関する高度区分資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <span class="badge rounded-pill badge-soft-gold">AWS</span>
+                                <span class="small text-secondary">Amazon Web Services</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">AWS Certified Solutions Architect - Associate</h3>
+                            <p class="text-secondary small mb-0">AWS上での可用性、拡張性、セキュリティを考慮した設計力を示す認定資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-blue">IT</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家試験</span>
+                                </div>
+                                <span class="small text-secondary">経済産業省</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">応用情報技術者</h3>
+                            <p class="text-secondary small mb-0">IT戦略、システム設計、開発、運用、マネジメントを横断的に扱う国家資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-blue">IT</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家試験</span>
+                                </div>
+                                <span class="small text-secondary">経済産業省</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">基本情報技術者</h3>
+                            <p class="text-secondary small mb-0">ITの基礎知識、アルゴリズム、ネットワーク、データベース、開発技術を幅広く扱う国家試験。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-blue">IT</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家試験</span>
+                                </div>
+                                <span class="small text-secondary">経済産業省</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">ITパスポート</h3>
+                            <p class="text-secondary small mb-0">IT・経営・セキュリティの基礎知識を幅広く証明する、社会人向けの国家資格試験。</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="d-md-flex align-items-end justify-content-between mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">ビジネス・会計</h2>
+                    <p class="text-secondary small mb-0">法務・会計・業務運営に関する知識</p>
+                </div>
+            </div>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Real Estate</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">愛知県知事</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">宅地建物取引士</h3>
+                            <p class="text-secondary small mb-0">不動産取引、重要事項説明、宅建業法、民法、法令上の制限に関する国家資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <span class="badge rounded-pill badge-soft-green">Accounting</span>
+                                <span class="small text-secondary">日本商工会議所</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">日商簿記検定2級</h3>
+                            <p class="text-secondary small mb-0">実務に必要な商業簿記・工業簿記の知識を問う、企業の経理担当者に求められる中級レベルの検定試験。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <span class="badge rounded-pill badge-soft-green">Accounting</span>
+                                <span class="small text-secondary">日本商工会議所</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">日商簿記検定3級</h3>
+                            <p class="text-secondary small mb-0">企業の基本的な経理処理や簿記の基礎知識を証明する入門レベルの検定試験。</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="d-md-flex align-items-end justify-content-between mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">鉄道・旅行</h2>
+                    <p class="text-secondary small mb-0">現場理解、法務、運行、旅行実務の知識</p>
+                </div>
+            </div>
+
+            <div class="row g-3 g-md-4">
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Travel</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">国土交通大臣</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">国内旅行業務取扱管理者</h3>
+                            <p class="text-secondary small mb-0">国内旅行商品の管理、約款、運賃料金、旅行実務を扱う国家資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Transport</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">国土交通大臣</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">運行管理者</h3>
+                            <p class="text-secondary small mb-0">事業用自動車の安全運行、労務管理、点呼、事故防止に関する国家資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <span class="badge rounded-pill badge-soft-green">Travel</span>
+                                <span class="small text-secondary">日本添乗サービス協会</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">旅程管理主任者</h3>
+                            <p class="text-secondary small mb-0">添乗業務に必要な旅程管理、安全確保、旅行者対応に関する資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="d-md-flex align-items-end justify-content-between mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">運転免許</h2>
+                    <p class="text-secondary small mb-0">車両運転・安全運行に関する資格</p>
+                </div>
+            </div>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Driving</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">静岡県公安委員会</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">大型自動車第一種免許</h3>
+                            <p class="text-secondary small mb-0">大型車両の運転に必要な知識・技能を証明する国家資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Driving</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">静岡県公安委員会</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">大型自動二輪免許</h3>
+                            <p class="text-secondary small mb-0">大型自動二輪車の運転に必要な知識・技能を証明する資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Driving</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">埼玉県公安委員会</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">普通自動二輪免許</h3>
+                            <p class="text-secondary small mb-0">普通自動二輪車の運転に必要な知識・技能を証明する資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Driving</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">新潟県公安委員会</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">普通自動車第一種免許</h3>
+                            <p class="text-secondary small mb-0">普通自動車の運転に必要な知識・技能を証明する資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Driving</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">新潟県公安委員会</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">原付免許</h3>
+                            <p class="text-secondary small mb-0">原動機付自転車の運転に必要な知識・技能を証明する資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="d-md-flex align-items-end justify-content-between mb-3">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">その他</h2>
+                    <p class="text-secondary small mb-0">その他、趣味などに関する資格</p>
+                </div>
+            </div>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Other</span>
+                                </div>
+                                <span class="small text-secondary">日本ケアフィット協会</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">サービス介助士</h3>
+                            <p class="text-secondary small mb-0">高齢者や障がい者への安全な介助方法と接遇を学ぶ実務資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Other</span>
+                                    <span class="badge rounded-pill badge-soft-red">国家資格</span>
+                                </div>
+                                <span class="small text-secondary">関東総合通信局長</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">第4級アマチュア無線技士</h3>
+                            <p class="text-secondary small mb-0">アマチュア無線局の運用に必要な無線工学と法規の知識を証明する国家資格。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Other</span>
+                                    <!-- <span class="badge rounded-pill badge-soft-red">国家資格</span> -->
+                                </div>
+                                <span class="small text-secondary">PADI</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">Advanced Open Water Diver</h3>
+                            <p class="text-secondary small mb-0">水中ナビゲーションやディープダイビングなど、応用的な潜水技術を習得したダイバー認定。</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <article class="card cert-card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge rounded-pill badge-soft-green">Other</span>
+                                    <!-- <span class="badge rounded-pill badge-soft-red">国家資格</span> -->
+                                </div>
+                                <span class="small text-secondary">PADI</span>
+                            </div>
+                            <h3 class="h5 fw-bold mb-2">Open Water Diver</h3>
+                            <p class="text-secondary small mb-0">スクーバダイビングの基礎知識と安全管理を習得した初級ダイバー認定。</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <section class="mb-5">
+      <div class="d-md-flex align-items-end justify-content-between mb-3">
+        <div>
+          <h2 class="h3 fw-bold mb-1">Next Target</h2>
+          <p class="text-secondary small mb-0">今後の学習ロードマップ</p>
+        </div>
+      </div>
+
+      <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-body p-4 p-md-5">
+          <div class="list-group list-group-flush">
+            <div class="list-group-item px-0 py-3 bg-transparent">
+              <div class="row g-2 align-items-start">
+                <div class="col-md-2">
+                  <span class="badge rounded-pill bg-brand-subtle text-brand">Next</span>
+                </div>
+                <div class="col-md-10">
+                  <h3 class="h6 fw-bold mb-1">AWS Certified SysOps Administrator - Associate</h3>
+                  <p class="text-secondary small mb-0">運用、監視、可用性、セキュリティ運用の理解を強化。</p>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item px-0 py-3 bg-transparent">
+              <div class="row g-2 align-items-start">
+                <div class="col-md-2">
+                  <span class="badge rounded-pill bg-brand-subtle text-brand">Next</span>
+                </div>
+                <div class="col-md-10">
+                  <h3 class="h6 fw-bold mb-1">AWS Certified Developer - Associate</h3>
+                  <p class="text-secondary small mb-0">AWSを利用したアプリケーション開発、CI/CD、サーバーレス領域を補強。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+        <footer class="text-center text-secondary small py-4">
+            © ヨシラボ / Last updated: 2026.5.25
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
